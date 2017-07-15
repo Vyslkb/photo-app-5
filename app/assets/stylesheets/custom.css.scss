@@ -67,6 +67,7 @@
   color: #FFF;
   padding: 75px 0;
   text-align: center;
+  text-shadow: 0 2px 2px #333;
 }
 
 .plans {
@@ -74,13 +75,26 @@
 
   .plan {
     ul {
-      text-align: left;
+      list-style: none;
+      padding: 30px;
+    }
+
+    .fa-star {
+      margin-right: 10px;
+    }
+
+    .price {
+      margin-bottom: 10px;
+    }
+
+    .extra {
+      font-size: 18px;
     }
   }
 
   .sign-up {
     display: block;
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
   }
 }
