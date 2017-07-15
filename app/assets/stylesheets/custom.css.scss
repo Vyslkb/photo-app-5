@@ -18,11 +18,6 @@
   padding-left: 0;
 }
 
-.nav.navbar-right {
-  padding-bottom: 10px;
-  padding-top: 5px;
-}
-
 .nav.navbar-nav {
   .navbar-link {
     border-radius: 5px;
@@ -58,4 +53,19 @@
 .btn-primary:visited,
 .btn-danger:visited {
   color: #fff;
+}
+
+.main-body {
+  margin-top: 100px;
+}
+
+.jumbotron {
+  background-image: asset-url('jumbo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #FFF;
+  padding: 75px 0;
+  margin: 0 15px;
+  text-align: center;
 }
