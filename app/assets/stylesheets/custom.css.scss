@@ -68,3 +68,19 @@
   padding: 75px 0;
   text-align: center;
 }
+
+.plans {
+  text-align: center;
+
+  .plan {
+    ul {
+      text-align: left;
+    }
+  }
+
+  .sign-up {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
