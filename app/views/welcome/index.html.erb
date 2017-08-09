@@ -1,47 +1,15 @@
-<% if current_user %>
-  <h2>Welcome, <%= current_user.email %>!</h2>
-<% else %>
-  <div class="jumbotron col-md-12">
-    <h2>Welcome to the photo management app!</h2>
-    <p class="lead">You'll love managing your photos here!  Please Sign Up!</p>
+<section class="page-home-welcome">
+  <h1 class="page-home-welcome__title">
+    Premium Photo Package
+    <span class="page-home-welcome__title-etc">$10</span>
+  </h1>
+  <ul class="page-home-welcome__plan-items">
+    <li class="page-home-welcome__plan-item col-md-6"><i class="fa fa-plus-square"></i> Unlimited Image Uploads</li>
+    <li class="page-home-welcome__plan-item col-md-6"><i class="fa fa-plus-square"></i> Responsive Design</li>
+    <li class="page-home-welcome__plan-item col-md-6"><i class="fa fa-plus-square"></i> Access Anywhere</li>
+    <li class="page-home-welcome__plan-item col-md-6"><i class="fa fa-plus-square"></i> In-depth Image Management</li>
+  </ul>
+  <div class="page-home-welcome__sign-up-container">
+    <%= link_to 'Sign Up Today', new_user_registration_path, class: 'btn btn-primary btn-lg page-home-welcome__btn' %>  
   </div>
-
-  <div class="row">
-    <div class="plans clearfix">
-      <div class="col-lg-4 col-lg-offset-2 plan">
-        <h2>Premium Plan</h2>
-        <div class="price">
-          Price: $10
-        </div>
-        <div class="features">
-          <ul class="well">
-            <li><span class="fa fa-star"></span>Unlimited Image Uploads</li>
-            <li><span class="fa fa-star"></span>Responsive Design</li>
-            <li><span class="fa fa-star"></span>Access Anywhere!</li>
-          </ul>
-        </div>
-        <p>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
-        </p>
-      </div>
-
-      <div class="col-lg-4 plan">
-        <h2>Amazing Plan</h2>
-        <div class="price">
-          Price: $20
-        </div>
-        <div class="features">
-          <ul class="well">
-            <li><span class="fa fa-star"></span>Unlimited Image Uploads</li>
-            <li><span class="fa fa-star"></span>Responsive Design</li>
-            <li><span class="fa fa-star"></span>Access Anywhere!</li>
-            <li class="extra"><span class="fa fa-star"></span>Other stuff you want!</li>
-          </ul>
-        </div>
-        <p>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
-        </p>
-      </div>
-    </div>
-  </div>
-<% end %>
+</section>

@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.main-body {
+  flex: 1;
+  padding-bottom: 50px;
+  padding-top: 70px;
+
+  @media screen and (max-width: 767px) and (min-width: 0) {
+    width: 100%;
+  }
+}
