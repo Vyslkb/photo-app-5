@@ -1,34 +1,27 @@
-<%- model_class = Image -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:picture) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= link_to image.name, image_path(image) %></td>
-        <td><%= image_tag image.picture.url, class: 'image-index-preview' %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_image_path(image), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      image_path(image),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class="page-images-index">
+  <h1 class="page-header">My Images</h1>
+  <% if @images.present? %>
+    <ul class="page-images-index__items clearfix">
+      <% @images.each do |image| %>
+        <li class="page-images-index__item col-sm-4">
+          <%= link_to image_path(image), class: 'page-images-index__img-link' do %>
+            <figure class="page-images-index__fig" style="background-image: url(<%= image.picture.url %>);">
+            </figure>
+          <% end %>
+          <div class="page-images-index__actions">
+            <%= link_to 'Edit', edit_image_path(image), 
+                                class: 'btn btn-default btn-xs' %>
+            <%= link_to 'Delete', image_path(image),
+                                  method: :delete,
+                                  data: { confirm: "Are you sure?" },
+                                  class: 'btn btn-xs btn-danger' %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="lead">No Images Yet!</p>
+  <% end %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_image_path,
-            :class => 'btn btn-primary' %>
+  <%= link_to 'New Image', new_image_path, class: 'btn btn-primary' %>
+</section>
